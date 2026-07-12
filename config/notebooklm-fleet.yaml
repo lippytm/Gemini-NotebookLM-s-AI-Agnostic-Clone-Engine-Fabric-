@@ -1,0 +1,83 @@
+version: 1
+fleet:
+  name: lippytm-ai-notebooklm-fleet
+  target_notebooks: 100
+  control_repository: lippytm/Gemini-NotebookLM-s-AI-Agnostic-Clone-Engine-Fabric-
+  orchestration:
+    dispatcher: Hermes
+    narrative_engine: Fable-5
+    operating_prompt: Prompt-11
+    source_grounding: NotebookLM
+    reasoning_providers:
+      - Gemini
+      - OpenAI
+      - provider-neutral
+  governance:
+    human_approval_required: true
+    commit_private_sources: false
+    provenance_required: true
+    factual_status_labels_required: true
+    riskgate_required_for_publication: true
+    secret_storage: repository-secrets-only
+  notebook_id_format: NBLM-{domain_code}-{sequence}
+  repository_mapping: one-primary-repository-per-notebook
+  synchronization:
+    registry: config/notebooklm-registry.csv
+    manifest_schema: schemas/notebook-manifest.schema.json
+    default_review_cadence: monthly
+    stale_after_days: 90
+  domains:
+    - code: CORE
+      name: Control Tower and Governance
+      allocation: 10
+    - code: CLONE
+      name: AI Clone Engine and Identity Fabric
+      allocation: 10
+    - code: AGENT
+      name: Hermes Agents Bots and Swarms
+      allocation: 10
+    - code: PUB
+      name: Ebooks Audiobooks and Publishing
+      allocation: 10
+    - code: BIZ
+      name: Business Development and Revenue
+      allocation: 10
+    - code: DEV
+      name: GitHub DevOps and Software Systems
+      allocation: 10
+    - code: EDU
+      name: Learning to Earning and Training
+      allocation: 10
+    - code: MEDIA
+      name: Multimedia Franchises and Fable 5
+      allocation: 10
+    - code: RISK
+      name: Evidence RiskGate Law and Cybersecurity
+      allocation: 10
+    - code: LAB
+      name: Experimental Future Technology Labs
+      allocation: 10
+workflows:
+  intake:
+    - register_notebook
+    - assign_primary_repository
+    - classify_sources
+    - set_access_level
+    - create_manifest
+  research:
+    - ingest_sources_into_notebooklm
+    - generate_grounded_summary
+    - extract_claims_and_citations
+    - send_task_envelope_to_hermes
+  production:
+    - route_to_clone_profile
+    - route_to_fable5_when_narrative
+    - apply_prompt11_manufacturing
+    - run_riskgate
+    - commit_approved_artifacts_to_github
+  maintenance:
+    - check_staleness
+    - detect_duplicate_notebooks
+    - detect_orphan_repositories
+    - refresh_source_inventory
+    - archive_or_merge_inactive_notebooks
