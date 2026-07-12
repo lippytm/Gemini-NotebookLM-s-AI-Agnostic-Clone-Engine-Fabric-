@@ -1,0 +1,64 @@
+version: 1
+fleet:
+  name: lippytm-ai-notebooklm-fleet
+  target_size: 100
+  status: expansion
+  control_repository: lippytm/Gemini-NotebookLM-s-AI-Agnostic-Clone-Engine-Fabric-
+  orchestrator: Hermes
+  narrative_engine: Fable-5
+  operating_prompt: Prompt-11
+  governance:
+    require_source_provenance: true
+    require_factual_status: true
+    prohibit_secrets_in_public_repositories: true
+    require_human_approval_for_high_risk_outputs: true
+notebooks:
+  - id: NLM-001
+    name: Control-Tower-and-Fleet-Governance
+    domain: governance
+    repository: lippytm/lippytm-lippytm.ai-tower-control-ai
+    status: planned
+    update_cadence: weekly
+    source_policy: approved-and-cited
+    hermes_route: control-tower
+  - id: NLM-002
+    name: Prompt-11-Systems-Factory
+    domain: prompts-and-manufacturing
+    repository: lippytm/Prompt-11-
+    status: planned
+    update_cadence: weekly
+    source_policy: approved-and-cited
+    hermes_route: prompt-factory
+  - id: NLM-003
+    name: Hermes-Agent-Operations
+    domain: orchestration
+    repository: lippytm/Hermes-AI-Hermes
+    status: planned
+    update_cadence: weekly
+    source_policy: approved-and-cited
+    hermes_route: hermes-core
+  - id: NLM-004
+    name: AI-Agnostic-Clone-Engine
+    domain: clone-engine
+    repository: lippytm/AI-Clone-of-Charles-Earl-Lipshay-lippytm-lippytm.AI-lippytmai-
+    status: planned
+    update_cadence: weekly
+    source_policy: private-by-default
+    hermes_route: clone-engine
+  - id: NLM-005
+    name: lippytm-AI-Core-Platform
+    domain: platform
+    repository: lippytm/lippytm.ai
+    status: planned
+    update_cadence: weekly
+    source_policy: approved-and-cited
+    hermes_route: platform-core
+allocation_plan:
+  governance_and_control: 10
+  business_and_revenue: 15
+  publishing_and_media: 20
+  agents_and_swarms: 15
+  software_and_devops: 15
+  research_and_evidence: 10
+  education_and_training: 10
+  experimental_labs: 5
