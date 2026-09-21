@@ -48,6 +48,21 @@ Final authority over spending, publishing, contracts, legal filings, entity form
 ### Hermes Coordination Layer
 Routes tasks, tracks status, manages handoffs, raises safety alerts, prevents conflicting work, and maintains approval queues.
 
+### AI Jarvis Assistant Layer
+Provides structured support to both the Manager Engineer and Communications Manager roles while preserving human approval boundaries.
+
+#### Manager Engineer Assistant
+- Translates strategic goals into technical plans, milestones, and engineering task queues
+- Tracks architecture decisions, implementation risks, dependencies, and delivery status
+- Prepares build, integration, and deployment readiness summaries for human review
+- Escalates blockers, safety concerns, and cross-team conflicts to the proper authority
+
+#### Communications Manager Assistant
+- Drafts clear stakeholder updates, campaign briefs, and project communication schedules
+- Maintains message consistency across legal, safety, revenue, and expansion tracks
+- Organizes inbound/outbound communication logs, follow-ups, and response priorities
+- Flags sensitive, high-risk, or approval-gated messaging before external release
+
 ### Fable 5 Creative Layer
 Develops stories, films, characters, simulations, music concepts, and educational narratives while keeping factual claims, dramatization, satire, and speculation clearly separated.
 
